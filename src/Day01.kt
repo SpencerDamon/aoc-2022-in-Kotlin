@@ -1,6 +1,19 @@
+import kotlin.math.max
 fun main() {
     fun part1(input: List<String>): Int {
-        return input.size
+        var highestSum = 0
+        var currentSum = 0
+        for (s in input) {
+
+            if (s.isEmpty()) { // if (see an empty line)
+                highestSum = max(highestSum, currentSum)
+                currentSum = 0
+            } else {
+                currentSum += s.toInt()
+            }
+        }
+
+        return highestSum
     }
 
     /*
@@ -10,10 +23,11 @@ fun main() {
      */
 
     // test if implementation meets criteria from the description, like:
-    val testInput = readInput("Day01_test")
-    check(part1(testInput) == 24000)
+    //val testInput = File("src/Day01_test.txt").readText()
+    //check(part1(testInput) == 54000)
 
-    val input = readInput("Day01")
-    println(part1(input))
+
+    val testInput = readInput("Day01_test")
+    println(part1(testInput))
     // println(part2(input))
 }
