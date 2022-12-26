@@ -33,7 +33,6 @@ fun main() {
         return myTotalScore
     }
 
-    /* Return sum of highest 3 sums dilineated by "" */
     fun part2(input: List<String>): Int {
         var myTotalScore = 0
 
